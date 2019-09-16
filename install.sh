@@ -22,7 +22,7 @@ zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbi
 # d. Configure the database for Zabbix server
 # Edit file /etc/zabbix/zabbix_server.conf
 
-sed -i 's/# DBPassword/DBPassword=password/g' /etc/zabbix/zabbix_server.conf
+sed -i 's/# DBPassword=/DBPassword=password/g' /etc/zabbix/zabbix_server.conf
 
 # e. Configure PHP for Zabbix frontend
 # Edit file /etc/zabbix/apache.conf, uncomment and set the right timezone for you.
