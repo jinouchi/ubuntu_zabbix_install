@@ -18,11 +18,11 @@ mysql --user="root" --password="password" --execute="grant all privileges on zab
 
 # Import initial schema and data. You will be prompted to enter your newly created password.
 
-zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p password
 # d. Configure the database for Zabbix server
 # Edit file /etc/zabbix/zabbix_server.conf
 
-sed -i 's/# DBPassword/DBPassword=password/g'
+sed -i 's/# DBPassword/DBPassword=password/g' /etc/zabbix/zabbix_server.conf
 
 # e. Configure PHP for Zabbix frontend
 # Edit file /etc/zabbix/apache.conf, uncomment and set the right timezone for you.
