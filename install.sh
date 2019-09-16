@@ -1,6 +1,6 @@
 # a. Install Zabbix repository
-wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+bionic_all.deb
-dpkg -i zabbix-release_4.2-2+bionic_all.deb
+wget https://repo.zabbix.com/zabbix/4.1/debian/pool/main/z/zabbix-release/zabbix-release_4.1-1+stretch_all.deb
+dpkg -i zabbix-release_4.1-1+stretch_all.deb
 apt update
 
 # b. Install Zabbix server, frontend, agent
