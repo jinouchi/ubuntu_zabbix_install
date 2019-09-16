@@ -18,7 +18,7 @@ mysql --user="root" --password="password" --execute="grant all privileges on zab
 
 # Import initial schema and data. You will be prompted to enter your newly created password.
 
-zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p password
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
 # d. Configure the database for Zabbix server
 # Edit file /etc/zabbix/zabbix_server.conf
 
