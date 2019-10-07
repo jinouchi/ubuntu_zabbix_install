@@ -12,15 +12,8 @@ apt -y install zabbix-server-mysql zabbix-frontend-php zabbix-agent
 mysql --user="root" --password="password" --execute="create database zabbix character set utf8 collate utf8_bin;"
 mysql --user="root" --password="password" --execute="grant all privileges on zabbix.* to zabbix@localhost identified by 'password';"
 
-# mysql> create database zabbix character set utf8 collate utf8_bin;
-# mysql> grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
-# mysql> quit;
-
-# Provide instructions to user
-echo "When prompted for a password, enter \"password\"."
-
 # Import initial schema and data. You will be prompted to enter your newly created password.
-zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -u zabbix --password="password" zabbix
 
 # d. Configure the database for Zabbix server
 # Edit file /etc/zabbix/zabbix_server.conf
@@ -43,3 +36,6 @@ echo 'The default mysql password for the user "root" has been set to "password".
 
      mysqladmin --user=root password "newpassword"
 '
+echo 'The default credentials for the web GUI are:
+Admin/zabbix
+guest/[empty]'
