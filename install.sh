@@ -17,7 +17,7 @@ mysql --user="root" --password="password" --execute="grant all privileges on zab
 # mysql> quit;
 
 # Provide instructions to user
-echo "When prompted for a password, enter \"password\".
+echo "When prompted for a password, enter \"password\"."
 
 # Import initial schema and data. You will be prompted to enter your newly created password.
 zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
@@ -37,9 +37,9 @@ sed -i 's/# php_value date.timezone.*$/php_value date.timezone America\/Boise/g'
 systemctl restart zabbix-server zabbix-agent apache2
 systemctl enable zabbix-server zabbix-agent apache2
 
-echo "If all went well, Zabbix is now installed and running. To access the web GUI, navigate to http://localhost/zabbix."
+echo "
+If all went well, Zabbix is now installed and running. To access the web GUI, navigate to http://localhost/zabbix."
 echo 'The default mysql password for the user "root" has been set to "password". To change this (which you should), run
 
-mysqladmin --user=root password "newpassword"
-
+     mysqladmin --user=root password "newpassword"
 '
